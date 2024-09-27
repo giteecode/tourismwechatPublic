@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.JiudianxinxiInfoDao">
+
+    <select id="checkRepeat" resultType="java.lang.Integer">
+        select count(id) from `jiudianxinxi_info` where ${column} = #{value}
+        <if test="id != null">
+            and id != #{id}
+        </if>
+    </select>
+
+  <select id="findByJiudianmingchengzj" resultType="com.example.vo.JiudianxinxiInfoVo">
+        select * from `jiudianxinxi_info` where `jiudianmingcheng` = #{username}
+    </select>
+
+    <select id="findByWeizhi" resultType="com.example.vo.JiudianxinxiInfoVo">
+        select `jiudianxinxi_info`.* from `jiudianxinxi_info`
+        where 1 = 1
+        <if test="weizhi != null and weizhi != '' and weizhi != 'all'">
+           and 
+			(
+			`jiudianxinxi_info`.`weizhi` like concat('%', #{weizhi}, '%')
+			 or `jiudianxinxi_info`.`jiudianmingcheng` like concat('%', #{weizhi}, '%')             or `jiudianxinxi_info`.`jiudianleixing` like concat('%', #{weizhi}, '%')             or `jiudianxinxi_info`.`weizhi` like concat('%', #{weizhi}, '%')             or `jiudianxinxi_info`.`dianhua` like concat('%', #{weizhi}, '%')             or `jiudianxinxi_info`.`jiage` like concat('%', #{weizhi}, '%')             or `jiudianxinxi_info`.`jianjie` like concat('%', #{weizhi}, '%')             
+			)
+        </if>
+        order by `jiudianxinxi_info`.id
+    </select>
+	<!--list23N-->
+    <select id="count" resultType="Integer">
+        select count(id) from `jiudianxinxi_info`
+    </select>
+</mapper>
+

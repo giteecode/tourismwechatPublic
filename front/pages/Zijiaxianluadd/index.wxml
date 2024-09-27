@@ -1,0 +1,25 @@
+﻿<view class="container">
+<view class="login-from">
+	<view class="inputView">
+    <label class="loginLab">线路名称</label>
+    <input class="inputText" type="text" placeholder="请输入线路名称" bindinput="xianlumingchengInput" value=""  />
+  </view>		<view class="inputView">
+    <label class="loginLab">出发地</label>
+    <input class="inputText" type="text" placeholder="请输入出发地" bindinput="chufadiInput" value=""  />
+  </view>		<view class="inputView">
+    <label class="loginLab">目的地</label>
+    <input class="inputText" type="text" placeholder="请输入目的地" bindinput="mudediInput" value=""  />
+  </view>		<view class="inputView">
+    <label class="loginLab">全程距离</label>
+    <input class="inputText" type="text" placeholder="请输入全程距离" bindinput="quanchengjuliInput" value=""  />
+  </view>		<view class="inputView"><label class="loginLab">详情描述</label><textarea  type="" style="height:100px;" placeholder="请输入详情描述" bindinput="xiangqingmiaoshuInput" value="" ></textarea></view>		<view class='edit-main'  style="background-color:white;">
+    <label class="loginLab">图片</label>
+    <image wx:if="{{tupianx == ''}}" src='../../imgs/addimg.png' bindtap="uploadimg" style='width:200rpx;height:200rpx;'></image>
+    <image wx:else src='{{tupianx}}' bindtap="uploadimg" style='width:200rpx;height:200rpx;'></image>
+</view>		
+  <view class="line"></view>
+  <view class="loginBtnView">
+    <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">提交</button>
+  </view>
+</view>
+</view>

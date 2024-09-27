@@ -1,0 +1,87 @@
+{
+    "pages": [
+        "pages/user/index",
+        "pages/index/index",
+        "pages/xinwentongzhi/index",
+		"pages/liuyanbanadd/index",
+		"pages/liuyanbanlist/index",
+		"pages/login/index",
+		"pages/resetPass/index",
+		"pages/shoucangjilulist2/index",
+		"pages/Meirituijianadd/index",
+        "pages/Meirituijianlist/index",
+        "pages/meirituijiandetail/index",
+        "pages/Zijiaxianluadd/index",
+        "pages/Zijiaxianlulist/index",
+        "pages/zijiaxianludetail/index",
+        "pages/Jiudianxinxilist/index",
+        "pages/jiudianxinxidetail/index",
+        "pages/Yudingjiudianadd/index",
+        "pages/Yudingjiudianlist/index",
+        "pages/yudingjiudiandetail/index",
+        "pages/Yudingjiudianlist2/index",
+        "pages/Zhuceyonghuadd/index",
+        "pages/Zhuceyonghulist/index",
+        "pages/zhuceyonghudetail/index",
+        "pages/Zhuceyonghuupdt2/index",
+        "pages/Xingchengxinxiadd/index",
+        "pages/Xingchengxinxilist/index",
+        "pages/xingchengxinxidetail/index",
+        "pages/Xingchengxinxilist2/index",
+        
+        "pages/userinfo/index"
+    ],
+    "permission": {
+        "scope.userLocation": {
+          "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+      },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "旅游系统小程序",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#1296DB",
+        "backgroundColor": "#fafafa",
+        "position": "bottom",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "icons/home.png",
+                "selectedIconPath": "icons/home_active.png"
+            },
+		
+			{
+			    "pagePath": "pages/Zijiaxianlulist/index",
+			    "text": "自驾线路",
+			    "iconPath": "icons/hsgcd3.png",
+			    "selectedIconPath": "icons/hsgcd3_active.png" 
+			},
+			{
+			    "pagePath": "pages/Jiudianxinxilist/index",
+			    "text": "酒店",
+			    "iconPath": "icons/hsgcd3.png",
+			    "selectedIconPath": "icons/hsgcd3_active.png" 
+			},
+            {
+			    "pagePath": "pages/Meirituijianlist/index",
+			    "text": "每日推荐",
+			    "iconPath": "icons/hsgcd2.png",
+			    "selectedIconPath": "icons/hsgcd2_active.png" 
+			},
+            {
+                "pagePath": "pages/user/index",
+                "text": "我的",
+                "iconPath": "icons/my.png",
+                "selectedIconPath": "icons/my_active.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

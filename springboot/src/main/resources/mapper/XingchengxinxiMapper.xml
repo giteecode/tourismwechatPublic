@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.XingchengxinxiInfoDao">
+
+    <select id="checkRepeat" resultType="java.lang.Integer">
+        select count(id) from `xingchengxinxi_info` where ${column} = #{value}
+        <if test="id != null">
+            and id != #{id}
+        </if>
+    </select>
+
+  <select id="findByChufadizj" resultType="com.example.vo.XingchengxinxiInfoVo">
+        select * from `xingchengxinxi_info` where `chufadi` = #{username}
+    </select>
+
+    <select id="findByXingchengriqi" resultType="com.example.vo.XingchengxinxiInfoVo">
+        select `xingchengxinxi_info`.* from `xingchengxinxi_info`
+        where 1 = 1
+        <if test="xingchengriqi != null and xingchengriqi != '' and xingchengriqi != 'all'">
+           and 
+			(
+			`xingchengxinxi_info`.`xingchengriqi` like concat('%', #{xingchengriqi}, '%')
+			 or `xingchengxinxi_info`.`xingchengriqi` like concat('%', #{xingchengriqi}, '%')             or `xingchengxinxi_info`.`chufadi` like concat('%', #{xingchengriqi}, '%')             or `xingchengxinxi_info`.`mudedi` like concat('%', #{xingchengriqi}, '%')             or `xingchengxinxi_info`.`beizhu` like concat('%', #{xingchengriqi}, '%')             or `xingchengxinxi_info`.`zhanghao` like concat('%', #{xingchengriqi}, '%')             or `xingchengxinxi_info`.`xingming` like concat('%', #{xingchengriqi}, '%')             
+			)
+        </if>
+        order by `xingchengxinxi_info`.id
+    </select>
+	<select id="findByXingchengriqilist2" resultType="com.example.vo.XingchengxinxiInfoVo">
+        select `xingchengxinxi_info`.* from `xingchengxinxi_info`
+        where 1 = 1
+        <if test="xingchengriqi != null and xingchengriqi != '' and xingchengriqi != 'all'">
+            and `xingchengxinxi_info`.`xingchengriqi` like concat('%', #{xingchengriqi}, '%')
+        </if>
+		<if test="zhanghao != null and zhanghao != '' and zhanghao != 'all'">
+            and `xingchengxinxi_info`.`zhanghao` like concat('%', #{zhanghao}, '%')
+        </if>
+        order by `xingchengxinxi_info`.id
+    </select>        <!--list23N-->
+    <select id="count" resultType="Integer">
+        select count(id) from `xingchengxinxi_info`
+    </select>
+</mapper>
+

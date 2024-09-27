@@ -1,0 +1,13 @@
+﻿<view class="container">
+	<view class="nx_line_title">
+	  <span>预定酒店</span>
+	  <span  style="float:right;color:red;font-weight: bold; " bindtap="hsgadd">+</span>
+	</view> 
+    <view class="nx_line_list">
+        <navigator class="nx_line_item" wx:for="{{YudingjiudianList}}" wx:for-item="item" wx:key="id" url="/pages/yudingjiudiandetail/index?id={{item.id}}">
+            <view style="display:flex;flex:1">
+                <view class="nx_item_name" style="width:70%">酒店名称：{{item.jiudianmingcheng}}</view>    <view class="nx_item_name" style="width:70%">酒店类型：{{item.jiudianleixing}}</view>    <view class="nx_item_name" style="width:70%">预定时间：{{item.yudingshijian}}</view>    
+            </view>
+        </navigator>
+    </view>
+</view>
